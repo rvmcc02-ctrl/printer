@@ -1,0 +1,7 @@
+{
+  "name": "PrintTech Direct - Commercial & Home Office Printers",
+  "description": "Google Ads-compliant printer marketplace featuring high-speed laser, ink-tank, and multifunction systems with transparent pricing and full warranty policies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
