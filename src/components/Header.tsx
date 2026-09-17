@@ -142,14 +142,14 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-2 sm:gap-4">
             {/* Phone support for Google Ads verification & high trust */}
             <a 
-              href="tel:18005557746"
+              href="tel:18886769138"
               id="header-phone-cta"
               className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-blue-400 hover:bg-blue-50/50 transition-all text-left"
             >
               <PhoneCall className="w-4 h-4 text-blue-600" />
               <div>
                 <div className="text-[10px] uppercase font-semibold text-slate-500">Sales & Specs Hotline</div>
-                <div className="text-sm font-bold text-slate-800 tracking-tight">1-800-555-PRINT</div>
+                <div className="text-sm font-bold text-slate-800 tracking-tight">1-888-676-9138</div>
               </div>
             </a>
 
@@ -253,7 +253,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="md:hidden bg-white border-t border-slate-200 px-4 py-3 space-y-2 shadow-lg">
           <div className="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
             <div className="text-xs text-slate-600">Questions? Talk to an expert:</div>
-            <a href="tel:18005557746" className="text-xs font-bold text-blue-600">1-800-555-PRINT</a>
+            <a href="tel:18886769138" className="text-xs font-bold text-blue-600">1-888-676-9138</a>
           </div>
           <button
             onClick={() => { onOpenQuiz(); setMobileMenuOpen(false); }}
