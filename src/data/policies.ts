@@ -72,7 +72,7 @@ export const POLICIES: Record<string, PolicyContent> = {
       {
         heading: '3. Return Authorization (RMA) Process',
         body: [
-          'Step 1: Contact our support desk at support@printtechdirect.com or call 1-800-555-7746 to request a Return Merchandise Authorization (RMA) number.',
+          'Step 1: Contact our support desk at support@printtechdirect.com or call 1-888-676-9138 to request a Return Merchandise Authorization (RMA) number.',
           'Step 2: Securely repack the unit in its original box with internal foam supports and affix the provided RMA return label.',
           'Step 3: Drop off at any authorized FedEx / UPS depot or schedule a complimentary freight pickup for units over 50 lbs.'
         ]
@@ -198,7 +198,7 @@ export const POLICIES: Record<string, PolicyContent> = {
       {
         heading: 'Direct Communication Channels',
         body: [
-          'Toll-Free Customer Line: 1-800-555-7746 (1-800-555-PRINT)',
+          'Toll-Free Customer Line: 1-888-676-9138',
           'Commercial Sales Desk: (770) 555-0198',
           'Customer Support Email: support@printtechdirect.com',
           'Wholesale & Corporate Inquiries: enterprise@printtechdirect.com'

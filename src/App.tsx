@@ -13,7 +13,8 @@ import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { PolicyModal } from './components/PolicyModal';
 import { QuoteModal } from './components/QuoteModal';
-import { CookieBanner } from './components/CookieBanner';
+import { CustomerSupportModal } from './components/CustomerSupportModal';
+import { PrinterSetupBanner } from './components/PrinterSetupBanner';
 import { ReviewsSection } from './components/ReviewsSection';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
@@ -22,12 +23,10 @@ import {
   ShieldCheck, 
   RotateCcw, 
   Truck, 
-  HelpCircle, 
   Sparkles, 
   Calculator, 
-  CheckCircle2, 
   SearchX,
-  AlertCircle
+  PhoneCall
 } from 'lucide-react';
 
 export default function App() {
@@ -59,6 +58,15 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [activePolicyModal, setActivePolicyModal] = useState<PolicyModalType | null>(null);
+  const [isSupportPopOpen, setIsSupportPopOpen] = useState(false);
+
+  // Auto-trigger Customer Service call pop-up after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsSupportPopOpen(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Cart State (Persisted in localStorage)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -194,7 +202,7 @@ export default function App() {
       if (filters.sortBy === 'price-desc') return b.price - a.price;
       if (filters.sortBy === 'speed-desc') return b.specs.printSpeedPpm - a.specs.printSpeedPpm;
       if (filters.sortBy === 'rating-desc') return b.rating - a.rating;
-      // Default: featured (preserve data order with bestsellers prioritized)
+      // Default: featured
       return 0;
     });
   }, [activeCategory, searchQuery, filters]);
@@ -217,7 +225,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-slate-50 flex flex-col selection:bg-blue-600 selection:text-white relative">
       {/* Header with Navigation and Compliance Bar */}
       <Header
         activeCategory={activeCategory}
@@ -366,6 +374,9 @@ export default function App() {
             </p>
           </div>
         </div>
+
+        {/* Dedicated Printer Setup & Installation Assistance Section */}
+        <PrinterSetupBanner onOpenSupportModal={() => setIsSupportPopOpen(true)} />
       </main>
 
       {/* Verified Reviews Section */}
@@ -453,9 +464,26 @@ export default function App() {
         />
       )}
 
-      {/* Cookie Consent Banner for Google Ads / Google Consent Mode compliance */}
-      <CookieBanner
-        onOpenPrivacyPolicy={() => setActivePolicyModal('privacy')}
+      {/* Persistent Floating Call Customer Service Trigger Button */}
+      <button
+        onClick={() => setIsSupportPopOpen(true)}
+        className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 px-4 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-2xl border-2 border-amber-500 flex items-center gap-2 cursor-pointer transition-all hover:scale-105 active:scale-95 group"
+        aria-label="Open Customer Service Call Assistance"
+      >
+        <PhoneCall className="w-4 h-4 text-slate-950 animate-bounce" />
+        <span className="font-extrabold tracking-tight">Call Support: 1-888-676-9138</span>
+      </button>
+
+      {/* Customer Service Call Pop-Up (Triggers automatically after 5s) */}
+      <CustomerSupportModal
+        isOpen={isSupportPopOpen}
+        onClose={() => setIsSupportPopOpen(false)}
+        onOpenQuiz={() => setIsQuizOpen(true)}
+        onOpenCalculator={() => setIsCalculatorOpen(true)}
+        onOpenPolicy={(policy) => setActivePolicyModal(policy as PolicyModalType)}
+        onScrollToContact={() => {
+          document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+        }}
       />
     </div>
   );

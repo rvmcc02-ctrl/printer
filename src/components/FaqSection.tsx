@@ -8,6 +8,10 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
+    question: 'How do I get help with printer setup, unboxing, Wi-Fi pairing, and driver installation?',
+    answer: 'Every printer package includes standard OEM quick-start setup guides and driver installation manuals. If you need step-by-step assistance with unboxing, removing protective shipping locks, wireless Wi-Fi pairing, or computer driver downloads, our equipment support team is available toll-free at 1-888-676-9138.'
+  },
+  {
     question: 'Are all printers brand new and factory sealed with toner/ink included?',
     answer: 'Yes, 100%. Every printer sold by PrintTech Direct is brand new, factory sealed in original OEM packaging, and includes standard initial starter supplies (toner cartridges for lasers or high-yield ink bottles for Supertank models), power cables, setup guides, and manufacturer warranty registration documents.'
   },
@@ -92,10 +96,10 @@ export const FaqSection: React.FC = () => {
             </div>
           </div>
           <a
-            href="tel:18005557746"
+            href="tel:18886769138"
             className="px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-800 text-xs font-bold hover:bg-slate-50 transition-colors shadow-xs"
           >
-            Call 1-800-555-PRINT
+            Call 1-888-676-9138
           </a>
         </div>
       </div>

@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <PhoneCall className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Toll-Free: 1-800-555-7746 (Mon-Fri 8am-8pm EST)</span>
+                <span>Toll-Free: 1-888-676-9138 (Mon-Fri 8am-8pm EST)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-400 shrink-0" />

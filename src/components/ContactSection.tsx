@@ -60,7 +60,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2 border-t border-slate-100 space-y-2">
                   <div className="flex items-center gap-2 text-slate-800 font-semibold">
                     <PhoneCall className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>Toll-Free Hotline: 1-800-555-7746 (1-800-555-PRINT)</span>
+                    <span>Toll-Free Hotline: 1-888-676-9138</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-800 font-semibold">
                     <Mail className="w-4 h-4 text-emerald-600 shrink-0" />
